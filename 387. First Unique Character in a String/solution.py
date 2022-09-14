@@ -12,3 +12,19 @@ class Solution:
                 count+=counth1[c]
         if count == len(s):
             return -1
+
+#Second solution
+def firstUniqChar(self, s: str) -> int:
+        c = Counter(s)
+        for val in c:
+            if c[val] == 1:
+                return s.index(val)
+        return -1
+        
+#Third solution
+def firstUniqChar(self, s: str) -> int:
+        c = Counter(s)
+        for v,k in enumerate(s):
+            if c[k] == 1:
+                return v
+        return -1
