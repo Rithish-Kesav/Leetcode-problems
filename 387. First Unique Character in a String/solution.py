@@ -33,9 +33,9 @@ def firstUniqChar(self, s: str) -> int:
 def firstUniqChar(self, s: str) -> int:
     best = float('inf')
     for i in range(26):
-        c = chr(i + ord('a'))
-        l = s.find(c)
-        r = s.rfind(c)
-        if l != -1 and l == r:
+        c = chr(i + ord('a')) #ord function returns ascii value and chr function returns it back to the character
+        l = s.find(c) #returns index of character in paranthesis by swiping from left, if character is not there it returns -1
+        r = s.rfind(c) #returns index of character in paranthesis by swiping from right, if character is not there it returns -1
+        if l != -1 and l == r: 
             best = min(best, l)
     return best if best != float('inf') else -1
