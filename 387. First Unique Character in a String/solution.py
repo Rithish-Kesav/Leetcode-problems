@@ -28,3 +28,14 @@ def firstUniqChar(self, s: str) -> int:
             if c[k] == 1:
                 return v
         return -1
+
+#Fastest solution
+def firstUniqChar(self, s: str) -> int:
+    best = float('inf')
+    for i in range(26):
+        c = chr(i + ord('a'))
+        l = s.find(c)
+        r = s.rfind(c)
+        if l != -1 and l == r:
+            best = min(best, l)
+    return best if best != float('inf') else -1
