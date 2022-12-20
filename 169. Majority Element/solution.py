@@ -4,5 +4,3 @@ class Solution:
         for key, val in hashMap.items():
             if val > len(nums)/2:
                 return key
-            else:
-                continue
